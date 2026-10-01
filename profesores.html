@@ -121,10 +121,16 @@
   .p-text blockquote{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.3rem,2.2vw,1.75rem);
     line-height:1.35;padding-left:22px;border-left:2px solid var(--a);margin-bottom:24px;color:var(--text)}
   .p-text .bio{font-weight:300;line-height:1.9;color:rgba(242,237,228,.78);font-size:.95rem;max-width:520px}
+  .clases{list-style:none;margin:26px 0 0;max-width:520px;border-top:1px solid rgba(255,255,255,.14)}
+  .clases li{display:grid;grid-template-columns:96px 1fr;gap:6px 14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .clases b{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;font-weight:400;color:var(--a);padding-top:3px}
+  .clases div{display:flex;flex-direction:column;gap:4px}
+  .clases span{font-size:.86rem;font-weight:300;color:rgba(242,237,228,.85);font-variant-numeric:tabular-nums}
   .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px;max-width:520px;
     padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
   .facts dt{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--a);margin-bottom:6px}
   .facts dd{font-family:var(--serif);font-size:1.08rem;line-height:1.25}
+  .facts{margin-top:26px}
 
   /* aparición al hacer scroll: la foto entra por su lado y el texto por el contrario */
   .p-photo,.p-text{opacity:0;filter:blur(8px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1),filter .9s ease}
@@ -180,6 +186,7 @@
     .p-photo::after,.prof.rev .p-photo::after{transform:translate(10px,10px)}
     .prof.rev .p-photo::after{transform:translate(-10px,10px)}
     .facts{grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .clases li{grid-template-columns:78px 1fr}
     .facts dd{font-size:.95rem}
     .btn{width:100%;text-align:center}
     .address{font-size:.6rem;letter-spacing:.12em;line-height:1.5}
@@ -243,145 +250,299 @@
 <main>
   <div class="kicker">Nuestro equipo</div>
   <h1>Conoce a nuestros <em>profesores</em></h1>
-  <p class="lead">Un maestro por cada estilo de baile, con la pasión y la experiencia para llevarte de tus primeros pasos al escenario.</p>
+  <p class="lead">El equipo que da vida a cada clase de la academia, con la pasión y la experiencia para llevarte de tus primeros pasos al escenario.</p>
 
-    <!-- Jessica Muñoz, directora de la academia (Ballroom): su foto se guarda como img/profesor-ballroom.jpg -->
+    <!-- Jessica Muñoz, directora de la academia: foto img/profesor-jessica-munoz.jpg -->
     <article class="prof" style="--a:#ff2d86;--b:#ffb3d9">
       <div class="p-photo">
         <div class="p-frame">
           <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
-          <div class="p-img" data-photo="img/profesor-ballroom" role="img" aria-label="Foto de Jessica Muñoz, directora de la academia"></div>
-          <div class="badge">Ballroom</div>
+          <div class="p-img" data-photo="img/profesor-jessica-munoz,img/profesor-ballroom" role="img" aria-label="Foto de Jessica Muñoz, directora de la academia"></div>
+          <div class="badge">Directora</div>
         </div>
       </div>
       <div class="p-text">
         <span class="num">01</span>
-        <div class="style">Ballroom</div>
+        <div class="style">Directora · Ballroom</div>
         <h2>Jessica Muñoz</h2>
         <div class="role">Directora de la academia · Ballroom</div>
         <blockquote>Más de 20 años dedicados al baile de salón.</blockquote>
         <p class="bio">Directora de la Academia Generaciones y especialista en ballroom, Jessica Muñoz reúne más de 20 años de trayectoria en la danza. Su enseñanza se centra en la postura, la conexión y la musicalidad, para que cada alumno descubra la elegancia de bailar en pareja. Además de dar clases, lidera al equipo de profesores y guía el proyecto de la academia, siempre con un trato cercano y exigente a la vez.</p>
+        <ul class="clases" aria-label="Clases de Jessica Muñoz"><li><b>Lunes</b><div><span>16:30 – 17:30 · Ballroom +8</span><span>17:30 – 18:30 · Ballroom +12</span><span>19:30 – 20:30 · Ballroom +16</span><span>21:30 – 22:30 · Mamis Dance</span></div></li><li><b>Martes</b><div><span>9:00 – 10:00 · Mamis Dance</span><span>17:30 – 18:30 · Cia Juvenil</span></div></li><li><b>Miércoles</b><div><span>21:30 – 22:30 · Cia Adultos</span></div></li><li><b>Jueves</b><div><span>16:30 – 17:30 · Cia Infantil</span><span>20:30 – 21:30 · Ballroom +20</span><span>21:30 – 22:30 · Ballroom +35</span></div></li></ul>
         <dl class="facts"><div><dt>Cargo</dt><dd>Directora de la academia</dd></div><div><dt>Experiencia</dt><dd>Más de 20 años</dd></div><div><dt>Especialidad</dt><dd>Ballroom</dd></div></dl>
       </div>
     </article>
 
-    <!-- Profesor/a de Danza contemporánea: cambia el nombre y la biografía; la foto se guarda como img/profesor-contemporaneo.jpg -->
-    <article class="prof rev" style="--a:#c9b8ff;--b:#19a7ee">
+    <!-- Cesar Molina: foto img/profesor-cesar-molina.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof rev" style="--a:#19a7ee;--b:#9b5cff">
       <div class="p-photo">
         <div class="p-frame">
           <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
-          <div class="p-img" data-photo="img/profesor-contemporaneo" role="img" aria-label="Foto del profesor de Danza contemporánea"></div>
-          <div class="badge">Danza contemporánea</div>
+          <div class="p-img" data-photo="img/profesor-cesar-molina" role="img" aria-label="Foto de Cesar Molina, docente de Zumba"></div>
+          <div class="badge">Zumba</div>
         </div>
       </div>
       <div class="p-text">
         <span class="num">02</span>
-        <div class="style">Danza contemporánea</div>
-        <h2>Nombre Apellido</h2>
-        <div class="role">Docente · Danza contemporánea</div>
-        <blockquote>“El movimiento es la forma más honesta de contar una historia.”</blockquote>
-        <p class="bio">Con más de una década sobre el escenario, ha hecho del suelo, la respiración y la improvisación el centro de su trabajo. Sus clases invitan a explorar el cuerpo sin miedo, a soltar la rigidez y a encontrar una voz propia en cada movimiento. Ha participado en montajes y festivales, y hoy guía a sus alumnos con paciencia, humor y mucha sensibilidad.</p>
-        <dl class="facts"><div><dt>Especialidad</dt><dd>Suelo e improvisación</dd></div><div><dt>Niveles</dt><dd>Todos los niveles</dd></div><div><dt>Clases</dt><dd>Grupales</dd></div></dl>
+        <div class="style">Zumba</div>
+        <h2>Cesar Molina</h2>
+        <div class="role">Docente · Zumba</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Zumba.</p>
+        <ul class="clases" aria-label="Clases de Cesar Molina"><li><b>Lunes</b><div><span>9:00 – 10:00 · Zumba</span></div></li><li><b>Miércoles</b><div><span>9:00 – 10:00 · Zumba</span></div></li><li><b>Viernes</b><div><span>9:00 – 10:00 · Zumba</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Zumba</dd></div><div><dt>Días</dt><dd>Lun · Mié · Vie</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
       </div>
     </article>
 
-    <!-- Profesor/a de Urbano: cambia el nombre y la biografía; la foto se guarda como img/profesor-urbano.jpg -->
-    <article class="prof" style="--a:#19a7ee;--b:#7fd3ff">
+    <!-- Fabi Gonzalez: foto img/profesor-fabi-gonzalez.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof" style="--a:#9b5cff;--b:#19a7ee">
       <div class="p-photo">
         <div class="p-frame">
           <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
-          <div class="p-img" data-photo="img/profesor-urbano" role="img" aria-label="Foto del profesor de Urbano"></div>
-          <div class="badge">Urbano</div>
+          <div class="p-img" data-photo="img/profesor-fabi-gonzalez" role="img" aria-label="Foto de Fabi Gonzalez, docente de Reggaeton"></div>
+          <div class="badge">Reggaeton</div>
         </div>
       </div>
       <div class="p-text">
         <span class="num">03</span>
-        <div class="style">Urbano</div>
-        <h2>Nombre Apellido</h2>
-        <div class="role">Docente · Urbano</div>
-        <blockquote>“Aquí no se baila para el espejo: se baila para la calle.”</blockquote>
-        <p class="bio">Su estilo nace de la cultura de calle y mezcla breaking, popping y freestyle con una energía que contagia a todo el salón. Ha participado en cyphers y batallas, y transmite a cada alumno la importancia de la base, la musicalidad y la personalidad propia. En sus clases se aprende técnica, pero sobre todo a perder el miedo a improvisar.</p>
-        <dl class="facts"><div><dt>Especialidad</dt><dd>Breaking y freestyle</dd></div><div><dt>Niveles</dt><dd>Principiante a avanzado</dd></div><div><dt>Clases</dt><dd>Grupales</dd></div></dl>
+        <div class="style">Reggaeton</div>
+        <h2>Fabi Gonzalez</h2>
+        <div class="role">Docente · Reggaeton</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Reggaeton y Urbano.</p>
+        <ul class="clases" aria-label="Clases de Fabi Gonzalez"><li><b>Lunes</b><div><span>18:30 – 19:30 · Reggaeton Stage +12</span></div></li><li><b>Miércoles</b><div><span>19:30 – 20:30 · Urbano +12</span><span>20:30 – 21:30 · Reggaeton Crew +18</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Reggaeton · Urbano</dd></div><div><dt>Días</dt><dd>Lun · Mié</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
       </div>
     </article>
 
-    <!-- Profesor/a de K-POP: cambia el nombre y la biografía; la foto se guarda como img/profesor-kpop.jpg -->
+    <!-- Soffie: foto img/profesor-soffie.jpg · edita el texto de presentación si quieres agregar su historia -->
     <article class="prof rev" style="--a:#19a7ee;--b:#ff2d86">
       <div class="p-photo">
         <div class="p-frame">
           <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
-          <div class="p-img" data-photo="img/profesor-kpop" role="img" aria-label="Foto del profesor de K-POP"></div>
+          <div class="p-img" data-photo="img/profesor-soffie" role="img" aria-label="Foto de Soffie, docente de K-POP"></div>
           <div class="badge">K-POP</div>
         </div>
       </div>
       <div class="p-text">
         <span class="num">04</span>
         <div class="style">K-POP</div>
-        <h2>Nombre Apellido</h2>
+        <h2>Soffie</h2>
         <div class="role">Docente · K-POP</div>
-        <blockquote>“Detrás de cada coreografía perfecta hay mil ensayos.”</blockquote>
-        <p class="bio">Apasionado por la cultura coreana y por la precisión de sus coreografías, dirige clases donde la sincronía, la expresión y la energía son las protagonistas. Cada sesión recrea los pasos más virales de los grupos favoritos del momento, con un método claro para aprenderlos paso a paso y bailarlos con la seguridad de un escenario.</p>
-        <dl class="facts"><div><dt>Especialidad</dt><dd>Coreografías de grupo</dd></div><div><dt>Niveles</dt><dd>Principiante a intermedio</dd></div><div><dt>Clases</dt><dd>Grupales</dd></div></dl>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de K-POP.</p>
+        <ul class="clases" aria-label="Clases de Soffie"><li><b>Lunes</b><div><span>20:30 – 21:30 · K-POP Adulto +18</span></div></li><li><b>Martes</b><div><span>18:30 – 19:30 · K-POP +10</span><span>19:30 – 20:30 · K-POP +14</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>K-POP</dd></div><div><dt>Días</dt><dd>Lun · Mar</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
       </div>
     </article>
 
-    <!-- Profesor/a de Infantil: cambia el nombre y la biografía; la foto se guarda como img/profesor-infantil.jpg -->
-    <article class="prof" style="--a:#7fd3ff;--b:#ff9ccc">
+    <!-- Gabo Lopez: foto img/profesor-gabo-lopez.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof" style="--a:#ff9ccc;--b:#ffd6ea">
       <div class="p-photo">
         <div class="p-frame">
           <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
-          <div class="p-img" data-photo="img/profesor-infantil" role="img" aria-label="Foto del profesor de Infantil"></div>
-          <div class="badge">Infantil</div>
+          <div class="p-img" data-photo="img/profesor-gabo-lopez" role="img" aria-label="Foto de Gabo Lopez, docente de Girly"></div>
+          <div class="badge">Girly</div>
         </div>
       </div>
       <div class="p-text">
         <span class="num">05</span>
-        <div class="style">Infantil</div>
-        <h2>Nombre Apellido</h2>
-        <div class="role">Docente · Infantil</div>
-        <blockquote>“Cuando un niño baila, aprende a confiar en sí mismo.”</blockquote>
-        <p class="bio">Convierte cada clase en un juego lleno de música, color y creatividad. Su trabajo con los más pequeños desarrolla la coordinación, el ritmo y la confianza, sin presión y con mucho cariño. Para sus alumnos, aprender a bailar es una aventura donde equivocarse también es parte de la diversión.</p>
-        <dl class="facts"><div><dt>Especialidad</dt><dd>Ritmo y coordinación</dd></div><div><dt>Edades</dt><dd>Desde los primeros años</dd></div><div><dt>Clases</dt><dd>Grupales</dd></div></dl>
+        <div class="style">Girly</div>
+        <h2>Gabo Lopez</h2>
+        <div class="role">Docente · Girly</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Girly.</p>
+        <ul class="clases" aria-label="Clases de Gabo Lopez"><li><b>Martes</b><div><span>20:30 – 21:30 · Girly +12</span><span>21:30 – 22:30 · Girly +18</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Girly</dd></div><div><dt>Días</dt><dd>Mar</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
       </div>
     </article>
 
-    <!-- Profesor/a de Girly style: cambia el nombre y la biografía; la foto se guarda como img/profesor-girly.jpg -->
-    <article class="prof rev" style="--a:#ff9ccc;--b:#ffd6ea">
+    <!-- Benja Pedraza: foto img/profesor-benja-pedraza.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof rev" style="--a:#9b5cff;--b:#19a7ee">
       <div class="p-photo">
         <div class="p-frame">
           <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
-          <div class="p-img" data-photo="img/profesor-girly" role="img" aria-label="Foto del profesor de Girly style"></div>
-          <div class="badge">Girly style</div>
+          <div class="p-img" data-photo="img/profesor-benja-pedraza" role="img" aria-label="Foto de Benja Pedraza, docente de Reggaeton"></div>
+          <div class="badge">Reggaeton</div>
         </div>
       </div>
       <div class="p-text">
         <span class="num">06</span>
-        <div class="style">Girly style</div>
-        <h2>Nombre Apellido</h2>
-        <div class="role">Docente · Girly style</div>
-        <blockquote>“La confianza también se entrena.”</blockquote>
-        <p class="bio">Su especialidad son los movimientos femeninos, llenos de flow, actitud y personalidad. En sus clases se trabaja la postura, la expresión y la seguridad personal, para que cada alumna se vea y se sienta poderosa al bailar. Un espacio para soltarse, divertirse y descubrir la mejor versión de uno mismo frente al espejo.</p>
-        <dl class="facts"><div><dt>Especialidad</dt><dd>Actitud y expresión</dd></div><div><dt>Niveles</dt><dd>Todos los niveles</dd></div><div><dt>Clases</dt><dd>Grupales</dd></div></dl>
+        <div class="style">Reggaeton</div>
+        <h2>Benja Pedraza</h2>
+        <div class="role">Docente · Reggaeton</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Reggaeton.</p>
+        <ul class="clases" aria-label="Clases de Benja Pedraza"><li><b>Miércoles</b><div><span>16:30 – 17:30 · Reggaeton +10</span><span>17:30 – 18:30 · Reggaeton Crew +10</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Reggaeton</dd></div><div><dt>Días</dt><dd>Mié</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
       </div>
     </article>
 
-    <!-- Profesor/a de Reggaetón: cambia el nombre y la biografía; la foto se guarda como img/profesor-reggaeton.jpg -->
-    <article class="prof" style="--a:#9b5cff;--b:#19a7ee">
+    <!-- Yazmin Salgado: foto img/profesor-yazmin-salgado.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof" style="--a:#c9b8ff;--b:#19a7ee">
       <div class="p-photo">
         <div class="p-frame">
           <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
-          <div class="p-img" data-photo="img/profesor-reggaeton" role="img" aria-label="Foto del profesor de Reggaetón"></div>
-          <div class="badge">Reggaetón</div>
+          <div class="p-img" data-photo="img/profesor-yazmin-salgado" role="img" aria-label="Foto de Yazmin Salgado, docente de Contemporáneo"></div>
+          <div class="badge">Contemporáneo</div>
         </div>
       </div>
       <div class="p-text">
         <span class="num">07</span>
-        <div class="style">Reggaetón</div>
-        <h2>Nombre Apellido</h2>
-        <div class="role">Docente · Reggaetón</div>
-        <blockquote>“Si el ritmo te mueve, ya empezaste a bailar.”</blockquote>
-        <p class="bio">Conoce el dembow y los ritmos latinos desde adentro, y los transmite con una energía que no deja a nadie quieto. Sus clases mezclan coreografías de los éxitos del momento con trabajo de cadencia, soltura y ritmo, en un ambiente de fiesta donde lo importante es pasarlo bien y animarse a bailar.</p>
-        <dl class="facts"><div><dt>Especialidad</dt><dd>Dembow y ritmos latinos</dd></div><div><dt>Niveles</dt><dd>Todos los niveles</dd></div><div><dt>Clases</dt><dd>Grupales</dd></div></dl>
+        <div class="style">Contemporáneo</div>
+        <h2>Yazmin Salgado</h2>
+        <div class="role">Docente · Contemporáneo</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Contemporáneo.</p>
+        <ul class="clases" aria-label="Clases de Yazmin Salgado"><li><b>Miércoles</b><div><span>18:30 – 19:30 · Contemporáneo +10</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Contemporáneo</dd></div><div><dt>Días</dt><dd>Mié</dd></div><div><dt>Clases por semana</dt><dd>1</dd></div></dl>
+      </div>
+    </article>
+
+    <!-- Camila Valenzuela: foto img/profesor-camila-valenzuela.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof rev" style="--a:#ffd6ea;--b:#c9b8ff">
+      <div class="p-photo">
+        <div class="p-frame">
+          <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
+          <div class="p-img" data-photo="img/profesor-camila-valenzuela" role="img" aria-label="Foto de Camila Valenzuela, docente de Ballet"></div>
+          <div class="badge">Ballet</div>
+        </div>
+      </div>
+      <div class="p-text">
+        <span class="num">08</span>
+        <div class="style">Ballet</div>
+        <h2>Camila Valenzuela</h2>
+        <div class="role">Docente · Ballet</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Ballet, Compañía y Ballroom.</p>
+        <ul class="clases" aria-label="Clases de Camila Valenzuela"><li><b>Jueves</b><div><span>17:30 – 18:30 · Ballet +11</span><span>18:30 – 19:30 · Ballet +7</span><span>19:30 – 20:30 · Cia Semilla</span></div></li><li><b>Sábado</b><div><span>12:30 – 13:30 · Baby Ballet +3</span><span>13:30 – 14:30 · Ballroom +5</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Ballet · Compañía · Ballroom</dd></div><div><dt>Días</dt><dd>Jue · Sáb</dd></div><div><dt>Clases por semana</dt><dd>5</dd></div></dl>
+      </div>
+    </article>
+
+    <!-- Nacho Landahur: foto img/profesor-nacho-landahur.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof" style="--a:#7fd3ff;--b:#ff9ccc">
+      <div class="p-photo">
+        <div class="p-frame">
+          <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
+          <div class="p-img" data-photo="img/profesor-nacho-landahur" role="img" aria-label="Foto de Nacho Landahur, docente de Acrobacias"></div>
+          <div class="badge">Acrobacias</div>
+        </div>
+      </div>
+      <div class="p-text">
+        <span class="num">09</span>
+        <div class="style">Acrobacias</div>
+        <h2>Nacho Landahur</h2>
+        <div class="role">Docente · Acrobacias</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Acrobacias.</p>
+        <ul class="clases" aria-label="Clases de Nacho Landahur"><li><b>Viernes</b><div><span>16:30 – 17:30 · Acrobacias +3</span><span>17:30 – 18:30 · Acrobacias +8</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Acrobacias</dd></div><div><dt>Días</dt><dd>Vie</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+      </div>
+    </article>
+
+    <!-- Claudia Yaser: foto img/profesor-claudia-yaser.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof rev" style="--a:#ff2d86;--b:#c9b8ff">
+      <div class="p-photo">
+        <div class="p-frame">
+          <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
+          <div class="p-img" data-photo="img/profesor-claudia-yaser" role="img" aria-label="Foto de Claudia Yaser, docente de Jazz Coreo"></div>
+          <div class="badge">Jazz Coreo</div>
+        </div>
+      </div>
+      <div class="p-text">
+        <span class="num">10</span>
+        <div class="style">Jazz Coreo</div>
+        <h2>Claudia Yaser</h2>
+        <div class="role">Docente · Jazz Coreo</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Jazz Coreo, Baby Show-Latino y Danza Infantil.</p>
+        <ul class="clases" aria-label="Clases de Claudia Yaser"><li><b>Viernes</b><div><span>18:30 – 19:30 · Jazz Coreo +10</span><span>19:30 – 20:30 · Baby Show-Latino (con Anais)</span></div></li><li><b>Sábado</b><div><span>11:30 – 12:30 · Danza Infantil +7</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Jazz Coreo · Baby Show-Latino · Danza Infantil</dd></div><div><dt>Días</dt><dd>Vie · Sáb</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
+      </div>
+    </article>
+
+    <!-- Anais: foto img/profesor-anais.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof" style="--a:#ff9ccc;--b:#7fd3ff">
+      <div class="p-photo">
+        <div class="p-frame">
+          <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
+          <div class="p-img" data-photo="img/profesor-anais" role="img" aria-label="Foto de Anais, docente de Baby Show-Latino"></div>
+          <div class="badge">Baby Show-Latino</div>
+        </div>
+      </div>
+      <div class="p-text">
+        <span class="num">11</span>
+        <div class="style">Baby Show-Latino</div>
+        <h2>Anais</h2>
+        <div class="role">Docente · Baby Show-Latino</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Baby Show-Latino.</p>
+        <ul class="clases" aria-label="Clases de Anais"><li><b>Viernes</b><div><span>19:30 – 20:30 · Baby Show-Latino (con Claudia Yaser)</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Baby Show-Latino</dd></div><div><dt>Días</dt><dd>Vie</dd></div><div><dt>Clases por semana</dt><dd>1</dd></div></dl>
+      </div>
+    </article>
+
+    <!-- Ignacio Novoa: foto img/profesor-ignacio-novoa.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof rev" style="--a:#c9b8ff;--b:#19a7ee">
+      <div class="p-photo">
+        <div class="p-frame">
+          <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
+          <div class="p-img" data-photo="img/profesor-ignacio-novoa" role="img" aria-label="Foto de Ignacio Novoa, docente de Contemporáneo"></div>
+          <div class="badge">Contemporáneo</div>
+        </div>
+      </div>
+      <div class="p-text">
+        <span class="num">12</span>
+        <div class="style">Contemporáneo</div>
+        <h2>Ignacio Novoa</h2>
+        <div class="role">Docente · Contemporáneo</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Contemporáneo y Acrobacias.</p>
+        <ul class="clases" aria-label="Clases de Ignacio Novoa"><li><b>Viernes</b><div><span>20:30 – 21:30 · Contemporáneo +12</span><span>21:30 – 22:30 · Acrobacias +12</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Contemporáneo · Acrobacias</dd></div><div><dt>Días</dt><dd>Vie</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+      </div>
+    </article>
+
+    <!-- Benja Carrasco: foto img/profesor-benja-carrasco.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof" style="--a:#19a7ee;--b:#7fd3ff">
+      <div class="p-photo">
+        <div class="p-frame">
+          <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
+          <div class="p-img" data-photo="img/profesor-benja-carrasco" role="img" aria-label="Foto de Benja Carrasco, docente de Urbano"></div>
+          <div class="badge">Urbano</div>
+        </div>
+      </div>
+      <div class="p-text">
+        <span class="num">13</span>
+        <div class="style">Urbano</div>
+        <h2>Benja Carrasco</h2>
+        <div class="role">Docente · Urbano</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Urbano y Reggaeton.</p>
+        <ul class="clases" aria-label="Clases de Benja Carrasco"><li><b>Sábado</b><div><span>9:00 – 10:00 · Urbano +7</span><span>10:30 – 11:30 · Reggaeton Crew +7</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Urbano · Reggaeton</dd></div><div><dt>Días</dt><dd>Sáb</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+      </div>
+    </article>
+
+    <!-- Daniela Vilches: foto img/profesor-daniela-vilches.jpg · edita el texto de presentación si quieres agregar su historia -->
+    <article class="prof rev" style="--a:#9b5cff;--b:#19a7ee">
+      <div class="p-photo">
+        <div class="p-frame">
+          <div class="ph"><svg viewBox="0 0 100 120" fill="currentColor" aria-hidden="true"><circle cx="50" cy="38" r="22"/><path d="M8 118c0-30 18-46 42-46s42 16 42 46z"/></svg><span>Foto del profesor</span></div>
+          <div class="p-img" data-photo="img/profesor-daniela-vilches" role="img" aria-label="Foto de Daniela Vilches, docente de Reggaeton"></div>
+          <div class="badge">Reggaeton</div>
+        </div>
+      </div>
+      <div class="p-text">
+        <span class="num">14</span>
+        <div class="style">Reggaeton</div>
+        <h2>Daniela Vilches</h2>
+        <div class="role">Docente · Reggaeton</div>
+        
+        <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Reggaeton.</p>
+        <ul class="clases" aria-label="Clases de Daniela Vilches"><li><b>Sábado</b><div><span>18:30 – 19:30 · Baby Reggaeton +3</span><span>19:30 – 20:30 · Reggaeton +7</span></div></li></ul>
+        <dl class="facts"><div><dt>Disciplinas</dt><dd>Reggaeton</dd></div><div><dt>Días</dt><dd>Sáb</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
       </div>
     </article>
 
@@ -406,20 +567,21 @@
 </footer>
 
 <script>
-// Fotos de los profesores: img/profesor-contemporaneo.jpg, profesor-urbano, profesor-ballroom, profesor-kpop,
-// profesor-infantil, profesor-girly y profesor-reggaeton (también .jpeg, .png o .webp). Si no existe, se ve un marcador.
+// Fotos de los profesores: img/profesor-nombre-apellido.jpg (por ejemplo profesor-cesar-molina.jpg; también .jpeg, .png o .webp).
+// Si no existe, se ve un marcador.
 (() => {
   const exts = ['jpg', 'jpeg', 'png', 'webp'];
   document.querySelectorAll('.p-img[data-photo]').forEach(el => {
-    const base = el.dataset.photo;
-    const tryNext = (i) => {
-      if (i >= exts.length) return;
-      const url = `${base}.${exts[i]}`, img = new Image();
+    const urls = el.dataset.photo.split(',').flatMap(b => exts.map(e => `${b.trim()}.${e}`));
+    let i = 0;
+    const tryNext = () => {
+      if (i >= urls.length) return;                       // sin foto: queda el marcador
+      const url = urls[i++], img = new Image();
       img.onload = () => { el.style.setProperty('--photo', `url('${url}')`); el.parentElement.classList.add('has'); };
-      img.onerror = () => tryNext(i + 1);
+      img.onerror = tryNext;
       img.src = url;
     };
-    tryNext(0);
+    tryNext();
   });
 
   // Aparición al hacer scroll

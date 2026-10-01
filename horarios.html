@@ -75,6 +75,9 @@
   .kicker::before,.kicker::after{content:"";width:48px;height:1px;background:linear-gradient(90deg,var(--gold),var(--pink))}
   h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1;text-align:center;margin:18px 0 14px}
   h1 em{font-style:italic;color:var(--pink)}
+  .semester{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 18px;
+    font-size:.95rem;letter-spacing:.42em;text-transform:uppercase;color:var(--pink)}
+  .semester::before,.semester::after{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--gold),var(--pink))}
   .lead{text-align:center;font-weight:300;color:rgba(242,237,228,.75);line-height:1.8;max-width:600px;margin:0 auto 18px}
   .rules{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 34px;margin:0 auto clamp(46px,7vw,80px);
     font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--silver)}
@@ -107,6 +110,9 @@
   td.prof{font-weight:300;color:rgba(242,237,228,.85)}
   td.hora{font-size:.9rem;letter-spacing:.08em;white-space:nowrap;font-variant-numeric:tabular-nums}
   td.hora time:first-child{color:var(--text)}
+  tr.libre td{opacity:.45}
+  tr.libre td.dia{opacity:1}
+  tr.libre:hover{background:none}
 
   .note{text-align:center;font-weight:300;font-size:.85rem;color:rgba(242,237,228,.6);margin:46px auto 30px;max-width:520px;line-height:1.7}
   .cta{text-align:center}
@@ -147,6 +153,8 @@
     .kicker{letter-spacing:.3em;font-size:.64rem;gap:10px}
     .kicker::before,.kicker::after{width:26px}
     .rules{gap:10px 22px;letter-spacing:.2em}
+    .semester{font-size:.78rem;letter-spacing:.28em;gap:10px}
+    .semester::before,.semester::after{width:24px}
     /* cada fila pasa a ser una tarjeta; el día se muestra como título */
     .day-title{display:block;font-family:var(--serif);font-weight:300;font-size:2rem;padding:20px 20px 14px;
       background:linear-gradient(160deg,rgba(25,167,238,.14),rgba(255,45,134,.12));border-bottom:1px solid rgba(255,255,255,.14)}
@@ -223,8 +231,9 @@
 <main>
   <div class="kicker">Clases semanales</div>
   <h1>Nuestros <em>horarios</em></h1>
+  <p class="semester">Segundo semestre 2026</p>
   <p class="lead">Encuentra tu clase y reserva tu lugar. Cada clase dura 1 hora.</p>
-  <div class="rules"><span>Lunes a viernes desde las 18:00 hrs</span><span>Sábados de 9:00 a 13:00 hrs</span></div>
+  <div class="rules"><span>Lunes a sábado</span><span>Clases de 1 hora</span></div>
 
   <div class="week">
     <section class="day" aria-labelledby="d-lunes">
@@ -233,20 +242,40 @@
         <caption class="sr">Horario de clases del lunes</caption>
         <thead><tr><th>Día</th><th>Clase</th><th>Profesor</th><th>Horario</th></tr></thead>
         <tbody>
-          <tr style="--a:#ff2d86;--b:#ffb3d9"><td class="dia" rowspan="3">Lunes<small>18:00 – 21:00 hrs</small></td>
-            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom</td>
-            <td class="prof" data-label="Profesor" data-estilo="Ballroom">Jessica Muñoz</td>
-            <td class="hora" data-label="Horario"><time>18:00</time> – <time>19:00</time> hrs</td>
+          <tr style="--a:#19a7ee;--b:#9b5cff"><td class="dia" rowspan="7">Lunes<small>7 clases</small></td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Zumba</td>
+            <td class="prof" data-label="Profesor">Cesar Molina</td>
+            <td class="hora" data-label="Horario"><time>9:00</time> – <time>10:00</time> hrs</td>
           </tr>
-          <tr style="--a:#c9b8ff;--b:#19a7ee">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Danza contemporánea</td>
-            <td class="prof" data-label="Profesor" data-estilo="Danza contemporánea">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>19:00</time> – <time>20:00</time> hrs</td>
+          <tr style="--a:#ff2d86;--b:#ffb3d9">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom +8</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>16:30</time> – <time>17:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff2d86;--b:#ffb3d9">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom +12</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>17:30</time> – <time>18:30</time> hrs</td>
           </tr>
           <tr style="--a:#9b5cff;--b:#19a7ee">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaetón</td>
-            <td class="prof" data-label="Profesor" data-estilo="Reggaetón">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>20:00</time> – <time>21:00</time> hrs</td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaeton Stage +12</td>
+            <td class="prof" data-label="Profesor">Fabi Gonzalez</td>
+            <td class="hora" data-label="Horario"><time>18:30</time> – <time>19:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff2d86;--b:#ffb3d9">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom +16</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>19:30</time> – <time>20:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#19a7ee;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>K-POP Adulto +18</td>
+            <td class="prof" data-label="Profesor">Soffie</td>
+            <td class="hora" data-label="Horario"><time>20:30</time> – <time>21:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff9ccc;--b:#9b5cff">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Mamis Dance</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>21:30</time> – <time>22:30</time> hrs</td>
           </tr>
         </tbody>
       </table>
@@ -257,20 +286,40 @@
         <caption class="sr">Horario de clases del martes</caption>
         <thead><tr><th>Día</th><th>Clase</th><th>Profesor</th><th>Horario</th></tr></thead>
         <tbody>
-          <tr style="--a:#7fd3ff;--b:#ff9ccc"><td class="dia" rowspan="3">Martes<small>18:00 – 21:00 hrs</small></td>
-            <td class="clase" data-label="Clase"><i class="dot"></i>Infantil</td>
-            <td class="prof" data-label="Profesor" data-estilo="Infantil">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>18:00</time> – <time>19:00</time> hrs</td>
+          <tr style="--a:#ff9ccc;--b:#9b5cff"><td class="dia" rowspan="7">Martes<small>6 clases</small></td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Mamis Dance</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>9:00</time> – <time>10:00</time> hrs</td>
           </tr>
-          <tr style="--a:#ff2d86;--b:#ffb3d9">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom</td>
-            <td class="prof" data-label="Profesor" data-estilo="Ballroom">Jessica Muñoz</td>
-            <td class="hora" data-label="Horario"><time>19:00</time> – <time>20:00</time> hrs</td>
+          <tr class="libre">
+            <td class="clase" data-label="Clase">—</td>
+            <td class="prof" data-label="Profesor">—</td>
+            <td class="hora" data-label="Horario"><time>16:30</time> – <time>17:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#d6d6de;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Cia Juvenil</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>17:30</time> – <time>18:30</time> hrs</td>
           </tr>
           <tr style="--a:#19a7ee;--b:#ff2d86">
-            <td class="clase" data-label="Clase"><i class="dot"></i>K-POP</td>
-            <td class="prof" data-label="Profesor" data-estilo="K-POP">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>20:00</time> – <time>21:00</time> hrs</td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>K-POP +10</td>
+            <td class="prof" data-label="Profesor">Soffie</td>
+            <td class="hora" data-label="Horario"><time>18:30</time> – <time>19:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#19a7ee;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>K-POP +14</td>
+            <td class="prof" data-label="Profesor">Soffie</td>
+            <td class="hora" data-label="Horario"><time>19:30</time> – <time>20:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff9ccc;--b:#ffd6ea">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Girly +12</td>
+            <td class="prof" data-label="Profesor">Gabo Lopez</td>
+            <td class="hora" data-label="Horario"><time>20:30</time> – <time>21:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff9ccc;--b:#ffd6ea">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Girly +18</td>
+            <td class="prof" data-label="Profesor">Gabo Lopez</td>
+            <td class="hora" data-label="Horario"><time>21:30</time> – <time>22:30</time> hrs</td>
           </tr>
         </tbody>
       </table>
@@ -281,15 +330,40 @@
         <caption class="sr">Horario de clases del miércoles</caption>
         <thead><tr><th>Día</th><th>Clase</th><th>Profesor</th><th>Horario</th></tr></thead>
         <tbody>
-          <tr style="--a:#9b5cff;--b:#19a7ee"><td class="dia" rowspan="2">Miércoles<small>18:00 – 20:00 hrs</small></td>
-            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaetón</td>
-            <td class="prof" data-label="Profesor" data-estilo="Reggaetón">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>18:00</time> – <time>19:00</time> hrs</td>
+          <tr style="--a:#19a7ee;--b:#9b5cff"><td class="dia" rowspan="7">Miércoles<small>7 clases</small></td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Zumba</td>
+            <td class="prof" data-label="Profesor">Cesar Molina</td>
+            <td class="hora" data-label="Horario"><time>9:00</time> – <time>10:00</time> hrs</td>
+          </tr>
+          <tr style="--a:#9b5cff;--b:#19a7ee">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaeton +10</td>
+            <td class="prof" data-label="Profesor">Benja Pedraza</td>
+            <td class="hora" data-label="Horario"><time>16:30</time> – <time>17:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#9b5cff;--b:#19a7ee">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaeton Crew +10</td>
+            <td class="prof" data-label="Profesor">Benja Pedraza</td>
+            <td class="hora" data-label="Horario"><time>17:30</time> – <time>18:30</time> hrs</td>
           </tr>
           <tr style="--a:#c9b8ff;--b:#19a7ee">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Danza contemporánea</td>
-            <td class="prof" data-label="Profesor" data-estilo="Danza contemporánea">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>19:00</time> – <time>20:00</time> hrs</td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Contemporáneo +10</td>
+            <td class="prof" data-label="Profesor">Yazmin Salgado</td>
+            <td class="hora" data-label="Horario"><time>18:30</time> – <time>19:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#19a7ee;--b:#7fd3ff">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Urbano +12</td>
+            <td class="prof" data-label="Profesor">Fabi Gonzalez</td>
+            <td class="hora" data-label="Horario"><time>19:30</time> – <time>20:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#9b5cff;--b:#19a7ee">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaeton Crew +18</td>
+            <td class="prof" data-label="Profesor">Fabi Gonzalez</td>
+            <td class="hora" data-label="Horario"><time>20:30</time> – <time>21:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#d6d6de;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Cia Adultos</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>21:30</time> – <time>22:30</time> hrs</td>
           </tr>
         </tbody>
       </table>
@@ -300,15 +374,40 @@
         <caption class="sr">Horario de clases del jueves</caption>
         <thead><tr><th>Día</th><th>Clase</th><th>Profesor</th><th>Horario</th></tr></thead>
         <tbody>
-          <tr style="--a:#ff9ccc;--b:#ffd6ea"><td class="dia" rowspan="2">Jueves<small>18:00 – 20:00 hrs</small></td>
-            <td class="clase" data-label="Clase"><i class="dot"></i>Girly style</td>
-            <td class="prof" data-label="Profesor" data-estilo="Girly style">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>18:00</time> – <time>19:00</time> hrs</td>
+          <tr class="libre"><td class="dia" rowspan="7">Jueves<small>6 clases</small></td>
+            <td class="clase" data-label="Clase">—</td>
+            <td class="prof" data-label="Profesor">—</td>
+            <td class="hora" data-label="Horario"><time>9:00</time> – <time>10:00</time> hrs</td>
           </tr>
-          <tr style="--a:#19a7ee;--b:#7fd3ff">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Urbano</td>
-            <td class="prof" data-label="Profesor" data-estilo="Urbano">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>19:00</time> – <time>20:00</time> hrs</td>
+          <tr style="--a:#d6d6de;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Cia Infantil</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>16:30</time> – <time>17:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ffd6ea;--b:#c9b8ff">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballet +11</td>
+            <td class="prof" data-label="Profesor">Camila Valenzuela</td>
+            <td class="hora" data-label="Horario"><time>17:30</time> – <time>18:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ffd6ea;--b:#c9b8ff">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballet +7</td>
+            <td class="prof" data-label="Profesor">Camila Valenzuela</td>
+            <td class="hora" data-label="Horario"><time>18:30</time> – <time>19:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#d6d6de;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Cia Semilla</td>
+            <td class="prof" data-label="Profesor">Camila Valenzuela</td>
+            <td class="hora" data-label="Horario"><time>19:30</time> – <time>20:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff2d86;--b:#ffb3d9">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom +20</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>20:30</time> – <time>21:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff2d86;--b:#ffb3d9">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom +35</td>
+            <td class="prof" data-label="Profesor">Jessica Muñoz</td>
+            <td class="hora" data-label="Horario"><time>21:30</time> – <time>22:30</time> hrs</td>
           </tr>
         </tbody>
       </table>
@@ -319,20 +418,40 @@
         <caption class="sr">Horario de clases del viernes</caption>
         <thead><tr><th>Día</th><th>Clase</th><th>Profesor</th><th>Horario</th></tr></thead>
         <tbody>
-          <tr style="--a:#19a7ee;--b:#7fd3ff"><td class="dia" rowspan="3">Viernes<small>18:00 – 21:00 hrs</small></td>
-            <td class="clase" data-label="Clase"><i class="dot"></i>Urbano</td>
-            <td class="prof" data-label="Profesor" data-estilo="Urbano">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>18:00</time> – <time>19:00</time> hrs</td>
+          <tr style="--a:#19a7ee;--b:#9b5cff"><td class="dia" rowspan="7">Viernes<small>7 clases</small></td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Zumba</td>
+            <td class="prof" data-label="Profesor">Cesar Molina</td>
+            <td class="hora" data-label="Horario"><time>9:00</time> – <time>10:00</time> hrs</td>
           </tr>
-          <tr style="--a:#ff2d86;--b:#ffb3d9">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom</td>
-            <td class="prof" data-label="Profesor" data-estilo="Ballroom">Jessica Muñoz</td>
-            <td class="hora" data-label="Horario"><time>19:00</time> – <time>20:00</time> hrs</td>
+          <tr style="--a:#d6d6de;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Acrobacias +3</td>
+            <td class="prof" data-label="Profesor">Nacho Landahur</td>
+            <td class="hora" data-label="Horario"><time>16:30</time> – <time>17:30</time> hrs</td>
           </tr>
-          <tr style="--a:#19a7ee;--b:#ff2d86">
-            <td class="clase" data-label="Clase"><i class="dot"></i>K-POP</td>
-            <td class="prof" data-label="Profesor" data-estilo="K-POP">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>20:00</time> – <time>21:00</time> hrs</td>
+          <tr style="--a:#d6d6de;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Acrobacias +8</td>
+            <td class="prof" data-label="Profesor">Nacho Landahur</td>
+            <td class="hora" data-label="Horario"><time>17:30</time> – <time>18:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff2d86;--b:#c9b8ff">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Jazz Coreo +10</td>
+            <td class="prof" data-label="Profesor">Claudia Yaser</td>
+            <td class="hora" data-label="Horario"><time>18:30</time> – <time>19:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff9ccc;--b:#7fd3ff">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Baby Show-Latino</td>
+            <td class="prof" data-label="Profesor">Anais y Claudia</td>
+            <td class="hora" data-label="Horario"><time>19:30</time> – <time>20:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#c9b8ff;--b:#19a7ee">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Contemporáneo +12</td>
+            <td class="prof" data-label="Profesor">Ignacio Novoa</td>
+            <td class="hora" data-label="Horario"><time>20:30</time> – <time>21:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#d6d6de;--b:#ff2d86">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Acrobacias +12</td>
+            <td class="prof" data-label="Profesor">Ignacio Novoa</td>
+            <td class="hora" data-label="Horario"><time>21:30</time> – <time>22:30</time> hrs</td>
           </tr>
         </tbody>
       </table>
@@ -343,20 +462,40 @@
         <caption class="sr">Horario de clases del sábado</caption>
         <thead><tr><th>Día</th><th>Clase</th><th>Profesor</th><th>Horario</th></tr></thead>
         <tbody>
-          <tr style="--a:#19a7ee;--b:#7fd3ff"><td class="dia" rowspan="3">Sábado<small>10:00 – 13:00 hrs</small></td>
-            <td class="clase" data-label="Clase"><i class="dot"></i>Urbano</td>
-            <td class="prof" data-label="Profesor" data-estilo="Urbano">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>10:00</time> – <time>11:00</time> hrs</td>
+          <tr style="--a:#19a7ee;--b:#7fd3ff"><td class="dia" rowspan="7">Sábado<small>7 clases</small></td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Urbano +7</td>
+            <td class="prof" data-label="Profesor">Benja Carrasco</td>
+            <td class="hora" data-label="Horario"><time>9:00</time> – <time>10:00</time> hrs</td>
           </tr>
-          <tr style="--a:#ff9ccc;--b:#ffd6ea">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Girly style</td>
-            <td class="prof" data-label="Profesor" data-estilo="Girly style">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>11:00</time> – <time>12:00</time> hrs</td>
+          <tr style="--a:#9b5cff;--b:#19a7ee">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaeton Crew +7</td>
+            <td class="prof" data-label="Profesor">Benja Carrasco</td>
+            <td class="hora" data-label="Horario"><time>10:30</time> – <time>11:30</time> hrs</td>
           </tr>
           <tr style="--a:#7fd3ff;--b:#ff9ccc">
-            <td class="clase" data-label="Clase"><i class="dot"></i>Infantil</td>
-            <td class="prof" data-label="Profesor" data-estilo="Infantil">Nombre Apellido</td>
-            <td class="hora" data-label="Horario"><time>12:00</time> – <time>13:00</time> hrs</td>
+            <td class="clase" data-label="Clase"><i class="dot"></i>Danza Infantil +7</td>
+            <td class="prof" data-label="Profesor">Claudia Yaser</td>
+            <td class="hora" data-label="Horario"><time>11:30</time> – <time>12:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ffd6ea;--b:#c9b8ff">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Baby Ballet +3</td>
+            <td class="prof" data-label="Profesor">Camila Valenzuela</td>
+            <td class="hora" data-label="Horario"><time>12:30</time> – <time>13:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#ff2d86;--b:#ffb3d9">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Ballroom +5</td>
+            <td class="prof" data-label="Profesor">Camila Valenzuela</td>
+            <td class="hora" data-label="Horario"><time>13:30</time> – <time>14:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#9b5cff;--b:#19a7ee">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Baby Reggaeton +3</td>
+            <td class="prof" data-label="Profesor">Daniela Vilches</td>
+            <td class="hora" data-label="Horario"><time>18:30</time> – <time>19:30</time> hrs</td>
+          </tr>
+          <tr style="--a:#9b5cff;--b:#19a7ee">
+            <td class="clase" data-label="Clase"><i class="dot"></i>Reggaeton +7</td>
+            <td class="prof" data-label="Profesor">Daniela Vilches</td>
+            <td class="hora" data-label="Horario"><time>19:30</time> – <time>20:30</time> hrs</td>
           </tr>
         </tbody>
       </table>
@@ -382,25 +521,11 @@
 </footer>
 
 <script>
-// Nombres de los profesores por estilo: edítalos aquí y se actualizan en todas las tablas.
+// Aparición de cada tabla al hacer scroll
 (() => {
-  const PROFESORES = {
-    'Ballroom': 'Jessica Muñoz',
-    'Danza contemporánea': 'Nombre Apellido',
-    'Urbano': 'Nombre Apellido',
-    'K-POP': 'Nombre Apellido',
-    'Infantil': 'Nombre Apellido',
-    'Girly style': 'Nombre Apellido',
-    'Reggaetón': 'Nombre Apellido'
-  };
-  document.querySelectorAll('td.prof[data-estilo]').forEach(td => {
-    const n = PROFESORES[td.dataset.estilo]; if (n) td.textContent = n;
-  });
-
-  // Aparición de cada tabla al hacer scroll
   const days = document.querySelectorAll('.day');
   if (!('IntersectionObserver' in window)) { days.forEach(d => d.classList.add('in')); return; }
-  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.08 });
   days.forEach(d => io.observe(d));
 })();
 </script>
