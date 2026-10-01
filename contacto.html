@@ -176,7 +176,8 @@
   @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto}}
 
   /* ---------- TRANSICIÓN ENTRE PÁGINAS (cortina lateral + difuminado) ---------- */
-  .curtain{position:fixed;inset:0;z-index:100;pointer-events:none;overflow:hidden}
+  html{overflow-x:hidden}
+  .curtain{position:fixed;inset:0;z-index:100;pointer-events:none;overflow:hidden;contain:paint}
   .curtain i{position:absolute;top:0;bottom:0;width:50.6%;background:#000;will-change:transform}
   .curtain i::after{content:"";position:absolute;top:0;bottom:0;width:2px;
     background:linear-gradient(180deg,transparent,var(--gold),var(--pink),transparent);
@@ -217,8 +218,8 @@
   <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav id="mainNav">
     <a href="index.html">Inicio</a>
-    <a href="#">Profesores</a>
-    <a href="#">Horarios</a>
+    <a href="profesores.html">Profesores</a>
+    <a href="horarios.html">Horarios</a>
     <a class="current" href="contacto.html">Contacto</a>
   </nav>
 </header>
