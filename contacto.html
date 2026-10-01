@@ -116,6 +116,8 @@
   select option{background:#120a1e;color:var(--text)}
   input:focus,select:focus,textarea:focus{border-color:var(--pink);box-shadow:0 1px 0 var(--pink)}
   input::placeholder,textarea::placeholder{color:rgba(242,237,228,.3)}
+  .pref{display:inline-block;margin:-10px 0 28px;padding:10px 18px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--text);border:1px solid var(--pink);background:linear-gradient(90deg,rgba(255,45,134,.16),transparent)}
   .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 
   .btn{
@@ -265,6 +267,7 @@
   <section class="form-wrap">
     <h2>Envíanos un <em>mensaje</em></h2>
     <p>Consultas por clases, horarios, matrículas o clases de prueba.</p>
+    <div class="pref" id="pref" hidden></div>
 
     <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
       <input type="hidden" name="access_key" value="4d0d77d7-86df-4e21-8590-dade7fe655e9">
@@ -295,6 +298,12 @@
             <option>Infantil</option>
             <option>Girly style</option>
             <option>Reggaetón</option>
+            <option>Zumba</option>
+            <option>Ballet</option>
+            <option>Acrobacias</option>
+            <option>Jazz</option>
+            <option>Mamis Dance</option>
+            <option>Compañías</option>
             <option>Horarios y valores</option>
             <option>Otro</option>
           </select>
@@ -398,6 +407,28 @@
     }
     btn.disabled = false;
   });
+})();
+</script>
+
+<script>
+// Si se llega desde "Quiero esta clase" (Profesores), se preselecciona la clase y se escribe un mensaje inicial
+(() => {
+  const q = new URLSearchParams(location.search);
+  const prof = (q.get('profesor') || '').slice(0, 80).trim();
+  if (!prof) return;
+  const clases = (q.get('clases') || '').slice(0, 160).trim();
+  const sel = document.getElementById('subject'), msg = document.getElementById('message'),
+        pref = document.getElementById('pref'), name = document.getElementById('name');
+  const MAP = { 'Contemporáneo': 'Danza contemporánea', 'Reggaeton': 'Reggaetón', 'Girly': 'Girly style', 'Jazz Coreo': 'Jazz',
+                'Compañía': 'Compañías', 'Danza Infantil': 'Infantil', 'Baby Show-Latino': 'Infantil' };
+  const first = clases.split(',')[0].trim();
+  const wanted = (MAP[first] || first).toLowerCase();
+  const opt = [...sel.options].find(o => o.textContent.trim().toLowerCase() === wanted);
+  sel.value = opt ? opt.value : 'Clase de prueba';
+  pref.hidden = false;
+  pref.textContent = 'Quiero esta clase · ' + (clases ? clases + ' · ' : '') + prof;
+  if (!msg.value) msg.value = `Hola, quiero inscribirme en una clase con ${prof}${clases ? ' (' + clases + ')' : ''}. ¿Me pueden enviar información sobre horarios y valores?`;
+  setTimeout(() => { document.querySelector('.form-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' }); name.focus({ preventScroll: true }); }, 1300);
 })();
 </script>
 

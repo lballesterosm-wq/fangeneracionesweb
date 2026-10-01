@@ -139,6 +139,14 @@
   .prof.in .p-photo,.prof.in .p-text{opacity:1;transform:none;filter:none}
   @media (prefers-reduced-motion:reduce){.p-photo,.p-text{opacity:1;transform:none;filter:none;transition:none}}
 
+  .btn-clase{display:inline-flex;align-items:center;gap:14px;margin-top:32px;padding:15px 30px;border:1px solid var(--a);
+    color:var(--text);text-decoration:none;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;
+    background:linear-gradient(90deg,color-mix(in srgb,var(--a) 16%,transparent),transparent);
+    transition:background .35s,color .35s,letter-spacing .35s,border-color .35s}
+  .btn-clase::after{content:"→";font-size:1rem;letter-spacing:0;transition:transform .3s}
+  .btn-clase:hover{background:linear-gradient(90deg,var(--a),var(--b));color:#0a0612;border-color:transparent;letter-spacing:.34em}
+  .btn-clase:hover::after{transform:translateX(5px)}
+
   /* llamada final */
   .cta{text-align:center}
   .cta h3{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:26px}
@@ -198,6 +206,7 @@
     .prof.rev .p-photo::after{transform:translate(-10px,10px)}
     .facts{grid-template-columns:1fr 1fr 1fr;gap:12px}
     .clases li{grid-template-columns:78px 1fr}
+    .btn-clase{width:100%;justify-content:center}
     .facts dd{font-size:.95rem}
     .btn{width:100%;text-align:center}
     .address{font-size:.6rem;letter-spacing:.12em;line-height:1.5}
@@ -282,6 +291,7 @@
         <p class="bio">Directora de la Academia Generaciones y especialista en ballroom, Jessica Muñoz reúne más de 20 años de trayectoria en la danza. Su enseñanza se centra en la postura, la conexión y la musicalidad, para que cada alumno descubra la elegancia de bailar en pareja. Además de dar clases, lidera al equipo de profesores y guía el proyecto de la academia, siempre con un trato cercano y exigente a la vez.</p>
         <ul class="clases" aria-label="Clases de Jessica Muñoz"><li><b>Lunes</b><div><span>16:30 – 17:30 · Ballroom +8</span><span>17:30 – 18:30 · Ballroom +12</span><span>19:30 – 20:30 · Ballroom +16</span><span>21:30 – 22:30 · Mamis Dance</span></div></li><li><b>Martes</b><div><span>9:00 – 10:00 · Mamis Dance</span><span>17:30 – 18:30 · Cia Juvenil</span></div></li><li><b>Miércoles</b><div><span>21:30 – 22:30 · Cia Adultos</span></div></li><li><b>Jueves</b><div><span>16:30 – 17:30 · Cia Infantil</span><span>20:30 – 21:30 · Ballroom +20</span><span>21:30 – 22:30 · Ballroom +35</span></div></li></ul>
         <dl class="facts"><div><dt>Cargo</dt><dd>Directora de la academia</dd></div><div><dt>Experiencia</dt><dd>Más de 20 años</dd></div><div><dt>Especialidad</dt><dd>Ballroom</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Jessica%20Mu%C3%B1oz&amp;clases=Ballroom%2C%20Mamis%20Dance%2C%20Compa%C3%B1%C3%ADa">Quiero esta clase</a>
       </div>
     </article>
 
@@ -303,6 +313,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Zumba.</p>
         <ul class="clases" aria-label="Clases de Cesar Molina"><li><b>Lunes</b><div><span>9:00 – 10:00 · Zumba</span></div></li><li><b>Miércoles</b><div><span>9:00 – 10:00 · Zumba</span></div></li><li><b>Viernes</b><div><span>9:00 – 10:00 · Zumba</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Zumba</dd></div><div><dt>Días</dt><dd>Lun · Mié · Vie</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Cesar%20Molina&amp;clases=Zumba">Quiero esta clase</a>
       </div>
     </article>
 
@@ -324,6 +335,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Reggaeton y Urbano.</p>
         <ul class="clases" aria-label="Clases de Fabi Gonzalez"><li><b>Lunes</b><div><span>18:30 – 19:30 · Reggaeton Stage +12</span></div></li><li><b>Miércoles</b><div><span>19:30 – 20:30 · Urbano +12</span><span>20:30 – 21:30 · Reggaeton Crew +18</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Reggaeton · Urbano</dd></div><div><dt>Días</dt><dd>Lun · Mié</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Fabi%20Gonzalez&amp;clases=Reggaeton%2C%20Urbano">Quiero esta clase</a>
       </div>
     </article>
 
@@ -345,6 +357,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de K-POP.</p>
         <ul class="clases" aria-label="Clases de Soffie"><li><b>Lunes</b><div><span>20:30 – 21:30 · K-POP Adulto +18</span></div></li><li><b>Martes</b><div><span>18:30 – 19:30 · K-POP +10</span><span>19:30 – 20:30 · K-POP +14</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>K-POP</dd></div><div><dt>Días</dt><dd>Lun · Mar</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Soffie&amp;clases=K-POP">Quiero esta clase</a>
       </div>
     </article>
 
@@ -366,6 +379,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Girly.</p>
         <ul class="clases" aria-label="Clases de Gabo Lopez"><li><b>Martes</b><div><span>20:30 – 21:30 · Girly +12</span><span>21:30 – 22:30 · Girly +18</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Girly</dd></div><div><dt>Días</dt><dd>Mar</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Gabo%20Lopez&amp;clases=Girly">Quiero esta clase</a>
       </div>
     </article>
 
@@ -387,6 +401,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Reggaeton.</p>
         <ul class="clases" aria-label="Clases de Benja Pedraza"><li><b>Miércoles</b><div><span>16:30 – 17:30 · Reggaeton +10</span><span>17:30 – 18:30 · Reggaeton Crew +10</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Reggaeton</dd></div><div><dt>Días</dt><dd>Mié</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Benja%20Pedraza&amp;clases=Reggaeton">Quiero esta clase</a>
       </div>
     </article>
 
@@ -408,6 +423,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Contemporáneo.</p>
         <ul class="clases" aria-label="Clases de Yazmin Salgado"><li><b>Miércoles</b><div><span>18:30 – 19:30 · Contemporáneo +10</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Contemporáneo</dd></div><div><dt>Días</dt><dd>Mié</dd></div><div><dt>Clases por semana</dt><dd>1</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Yazmin%20Salgado&amp;clases=Contempor%C3%A1neo">Quiero esta clase</a>
       </div>
     </article>
 
@@ -429,6 +445,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Ballet, Compañía y Ballroom.</p>
         <ul class="clases" aria-label="Clases de Camila Valenzuela"><li><b>Jueves</b><div><span>17:30 – 18:30 · Ballet +11</span><span>18:30 – 19:30 · Ballet +7</span><span>19:30 – 20:30 · Cia Semilla</span></div></li><li><b>Sábado</b><div><span>12:30 – 13:30 · Baby Ballet +3</span><span>13:30 – 14:30 · Ballroom +5</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Ballet · Compañía · Ballroom</dd></div><div><dt>Días</dt><dd>Jue · Sáb</dd></div><div><dt>Clases por semana</dt><dd>5</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Camila%20Valenzuela&amp;clases=Ballet%2C%20Compa%C3%B1%C3%ADa%2C%20Ballroom">Quiero esta clase</a>
       </div>
     </article>
 
@@ -450,6 +467,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Acrobacias.</p>
         <ul class="clases" aria-label="Clases de Nacho Landahur"><li><b>Viernes</b><div><span>16:30 – 17:30 · Acrobacias +3</span><span>17:30 – 18:30 · Acrobacias +8</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Acrobacias</dd></div><div><dt>Días</dt><dd>Vie</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Nacho%20Landahur&amp;clases=Acrobacias">Quiero esta clase</a>
       </div>
     </article>
 
@@ -471,6 +489,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Jazz Coreo, Baby Show-Latino y Danza Infantil.</p>
         <ul class="clases" aria-label="Clases de Claudia Yaser"><li><b>Viernes</b><div><span>18:30 – 19:30 · Jazz Coreo +10</span><span>19:30 – 20:30 · Baby Show-Latino (con Anais)</span></div></li><li><b>Sábado</b><div><span>11:30 – 12:30 · Danza Infantil +7</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Jazz Coreo · Baby Show-Latino · Danza Infantil</dd></div><div><dt>Días</dt><dd>Vie · Sáb</dd></div><div><dt>Clases por semana</dt><dd>3</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Claudia%20Yaser&amp;clases=Jazz%20Coreo%2C%20Baby%20Show-Latino%2C%20Danza%20Infantil">Quiero esta clase</a>
       </div>
     </article>
 
@@ -492,6 +511,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Baby Show-Latino.</p>
         <ul class="clases" aria-label="Clases de Anais"><li><b>Viernes</b><div><span>19:30 – 20:30 · Baby Show-Latino (con Claudia Yaser)</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Baby Show-Latino</dd></div><div><dt>Días</dt><dd>Vie</dd></div><div><dt>Clases por semana</dt><dd>1</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Anais&amp;clases=Baby%20Show-Latino">Quiero esta clase</a>
       </div>
     </article>
 
@@ -513,6 +533,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Contemporáneo y Acrobacias.</p>
         <ul class="clases" aria-label="Clases de Ignacio Novoa"><li><b>Viernes</b><div><span>20:30 – 21:30 · Contemporáneo +12</span><span>21:30 – 22:30 · Acrobacias +12</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Contemporáneo · Acrobacias</dd></div><div><dt>Días</dt><dd>Vie</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Ignacio%20Novoa&amp;clases=Contempor%C3%A1neo%2C%20Acrobacias">Quiero esta clase</a>
       </div>
     </article>
 
@@ -534,6 +555,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Urbano y Reggaeton.</p>
         <ul class="clases" aria-label="Clases de Benja Carrasco"><li><b>Sábado</b><div><span>9:00 – 10:00 · Urbano +7</span><span>10:30 – 11:30 · Reggaeton Crew +7</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Urbano · Reggaeton</dd></div><div><dt>Días</dt><dd>Sáb</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Benja%20Carrasco&amp;clases=Urbano%2C%20Reggaeton">Quiero esta clase</a>
       </div>
     </article>
 
@@ -555,6 +577,7 @@
         <p class="bio">Parte del equipo de profesores de la Academia Generaciones. Durante el segundo semestre 2026 está a cargo de las clases de Reggaeton.</p>
         <ul class="clases" aria-label="Clases de Daniela Vilches"><li><b>Sábado</b><div><span>18:30 – 19:30 · Baby Reggaeton +3</span><span>19:30 – 20:30 · Reggaeton +7</span></div></li></ul>
         <dl class="facts"><div><dt>Disciplinas</dt><dd>Reggaeton</dd></div><div><dt>Días</dt><dd>Sáb</dd></div><div><dt>Clases por semana</dt><dd>2</dd></div></dl>
+        <a class="btn-clase" href="contacto.html?profesor=Daniela%20Vilches&amp;clases=Reggaeton">Quiero esta clase</a>
       </div>
     </article>
 

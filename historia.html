@@ -100,6 +100,14 @@
   .logo-art.ok{background:#000;box-shadow:0 0 70px rgba(255,45,134,.22),0 0 40px rgba(25,167,238,.18);overflow:hidden}
   .logo-art.ok .logo-img{display:block}
   .logo-art.ok .mono,.logo-art.ok small{display:none}
+  /* foto de Jessica Muñoz (img/profesor-jessica-munoz.jpg); si no existe, se muestra la "J" */
+  .dir-img{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .dir.ok{aspect-ratio:4/5}
+  .dir.ok .dir-img{display:block}
+  .dir.ok .mono{display:none}
+  .dir.ok::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,transparent 42%)}
+  .dir.ok small{z-index:2;color:#fff;opacity:.95}
   .art.dir .mono{font-style:italic;-webkit-text-stroke-color:var(--pink)}
 
   /* camino por edades */
@@ -286,7 +294,11 @@
 
   <!-- Directora -->
   <section class="sec two rev rv">
-    <div class="art dir" aria-hidden="true"><span class="mono">J</span><small>Jessica Muñoz · Directora</small></div>
+    <div class="art dir" id="dirArt">
+      <img class="dir-img" id="dirImg" alt="Jessica Muñoz, directora de la academia">
+      <span class="mono" aria-hidden="true">J</span>
+      <small>Jessica Muñoz · Directora</small>
+    </div>
     <div>
       <div class="eyebrow">Quien guía el proyecto</div>
       <h2>Jessica Muñoz, <em>directora</em></h2>
@@ -384,6 +396,18 @@
     console.info('Logo cargado desde:', img.src.startsWith('data:') ? 'copia incluida en la página (no se encontró LogoGeneraciones.jpg)' : img.src);
   };
   img.onerror = () => { if (++i < urls.length) img.src = urls[i]; };
+  img.src = urls[0];
+})();
+</script>
+
+<script>
+// Foto de Jessica Muñoz: img/profesor-jessica-munoz.jpg (también .jpeg, .png o .webp)
+(() => {
+  const art = document.getElementById('dirArt'), img = document.getElementById('dirImg');
+  const urls = ['jpg', 'jpeg', 'png', 'webp'].map(e => `img/profesor-jessica-munoz.${e}`);
+  let i = 0;
+  img.onload = () => art.classList.add('ok');
+  img.onerror = () => { if (++i < urls.length) img.src = urls[i]; else console.info('No se encontró img/profesor-jessica-munoz.jpg; se muestra la inicial.'); };
   img.src = urls[0];
 })();
 </script>
